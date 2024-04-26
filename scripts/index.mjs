@@ -40,6 +40,15 @@ async function displayMovies() {
     price.textContent = `Price: ${product.price}`;
     productDiv.appendChild(price);
 
+    const button = document.createElement('button');
+    button.textContent = 'View Details';
+    button.classList.add('product-button');
+
+    button.addEventListener('click', () => {
+      window.location.href = `product/index.html?id=${product.id}`;
+    });
+    productDiv.appendChild(button);
+    
     mainContent.appendChild(productDiv);
   });
 }
