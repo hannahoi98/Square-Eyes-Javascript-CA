@@ -5,10 +5,13 @@ const API_BASE_URL = "https://api.noroff.dev/api/v1/square-eyes";
 async function getData() {
   try {
     const response = await fetch(API_BASE_URL);
+    if (!response.ok) {
+      throw new Error("Failed to fetch data") 
+    }
     const json = await response.json();
     return json;
   } catch (error) {
-    console.error(error);
+    throw new Error("Failed to fetch data")
   } 
 }
 
