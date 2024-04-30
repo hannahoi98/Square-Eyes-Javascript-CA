@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   // This code will run when the DOM content is fully loaded
   displayMovies();
+  addGenreButtonListeners();
 });
 
 
@@ -20,7 +21,7 @@ async function getData() {
   } 
 }
 
-async function displayMovies() {
+async function displayMovies(genre = 'all') {
   const loader = document.getElementById('loader');
   const mainContent = document.getElementById('main-content');
   
@@ -31,42 +32,59 @@ async function displayMovies() {
     mainContent.innerHTML = '';
 
     data.forEach(product => {
-      const productDiv = document.createElement('div');
-      productDiv.classList.add('product');
-  
-      const img = document.createElement('img');
-      img.src = product.image;
-      img.alt = product.title;
-      productDiv.appendChild(img);
-  
-      const title = document.createElement('h2');
-      title.textContent = product.title;
-      productDiv.appendChild(title);
-  
-      const genre = document.createElement('p');
-      genre.textContent = `Genre: ${product.genre}`;
-      productDiv.appendChild(genre);
-  
-      const price = document.createElement('p');
-      price.textContent = `Price: ${product.price}`;
-      productDiv.appendChild(price);
-  
-      const button = document.createElement('button');
-      button.textContent = 'View Details';
-      button.classList.add('product-button');
-  
-      button.addEventListener('click', () => {
-        window.location.href = `product/index.html?id=${product.id}`;
-      });
-      productDiv.appendChild(button);
-      
-      mainContent.appendChild(productDiv);
+      if (genre === 'all' || product.genre === genre) {
+        const productDiv = document.createElement('div');
+        productDiv.classList.add('product');
+    
+        const img = document.createElement('img');
+        img.src = product.image;
+        img.alt = product.title;
+        productDiv.appendChild(img);
+    
+        const title = document.createElement('h2');
+        title.textContent = product.title;
+        productDiv.appendChild(title);
+    
+        const genre = document.createElement('p');
+        genre.textContent = `Genre: ${product.genre}`;
+        productDiv.appendChild(genre);
+    
+        const price = document.createElement('p');
+        price.textContent = `Price: ${product.price}`;
+        productDiv.appendChild(price);
+    
+        const button = document.createElement('button');
+        button.textContent = 'View Details';
+        button.classList.add('product-button');
+    
+        button.addEventListener('click', () => {
+          window.location.href = `product/index.html?id=${product.id}`;
+        });
+        productDiv.appendChild(button);
+        
+        mainContent.appendChild(productDiv); 
+      }
     });
   } catch (error) {
     console.error(error);
   } finally {
     loader.style.display = 'none';
   } 
+}
+
+function addGenreButtonListeners() {
+  const genreButtons = document.querySelectorAll('.genre-button');
+  genreButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const selectedGenre = button.getAttribute('data-genre');
+      // Remove active class from all buttons
+      genreButtons.forEach(btn => btn.classList.remove('active'));
+      // Add active class to the clicked button
+      button.classList.add('active');
+      // Display movies of the selected genre
+      displayMovies(selectedGenre);
+    });
+  });
 }
 
 
