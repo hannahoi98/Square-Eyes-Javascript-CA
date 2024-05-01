@@ -1,5 +1,4 @@
 // product.mjs
-
 const API_BASE_URL = "https://api.noroff.dev/api/v1/square-eyes";
 
 // Function to parse URL and extract query parameters
@@ -38,7 +37,6 @@ async function displayProductDetails() {
     if (product) {
       // Display product details on the page
       document.getElementById('product-image').src = product.image;
-
       document.getElementById('product-title').textContent = product.title;
       document.getElementById('product-genre').textContent = `Genre: ${product.genre}`;
       document.getElementById('product-rating').textContent = `Rating: ${product.rating}`;
