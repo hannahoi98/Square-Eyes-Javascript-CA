@@ -33,6 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const movieId = urlParams.id;
   
         if (movieId) {
+            const loader = document.getElementById("loader");
+            loader.style.display = "block"; 
+
             const movie = await getMovieDetails(movieId);
             if (movie) {
                 // Create elements to display movie details
@@ -91,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 console.error("Movie not found");
             }
+            loader.style.display = "none";
         } else {
             console.error("Movie ID not provided");
         }
