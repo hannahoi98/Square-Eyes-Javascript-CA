@@ -82,10 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
               price.textContent = `Price: ${product.price}`;
               detailsDiv.appendChild(price);
 
-              const discountedPrice = document.createElement('p');
-              discountedPrice.textContent = `Discounted Price: ${product.discountedPrice}`;
-              detailsDiv.appendChild(discountedPrice);
-
           } else {
               console.error('Product not found');
           }
@@ -104,21 +100,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Function to handle "Add to Cart" button click
-  function handleAddToCartClick() {
-      const urlParams = parseUrlParams(window.location.href);
-      const productId = urlParams.id;
+  async function handleAddToCartClick() {
+    const urlParams = parseUrlParams(window.location.href);
+    const productId = urlParams.id;
 
-      if (productId) {
-          getProductDetails(productId).then(product => {
-              addToCart(product);
-              alert('Product added to cart!');
-          }).catch(error => {
-              console.error(error);
-          });
-      } else {
-          console.error('Product ID not provided');
-      }
-  }
+    if (productId) {
+        try {
+            const product = await getProductDetails(productId);
+            addToCart(product);
+            alert('Product added to cart!');
+        } catch (error) {
+            console.error(error);
+        }
+    } else {
+        console.error('Product ID not provided');
+    }
+}
 
   // Add event listener to "Add to Cart" button
   const addToCartBtn = document.getElementById('add-to-cart-btn');

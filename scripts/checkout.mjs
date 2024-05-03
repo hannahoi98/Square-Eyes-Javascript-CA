@@ -1,4 +1,4 @@
-z// Function to display cart items
+// Function to display cart items
 function displayCartItems() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartContainer = document.getElementById('cart-container');

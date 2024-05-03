@@ -54,7 +54,7 @@ async function displayMovies(genre = 'all') {
         productDiv.appendChild(price);
     
         const button = document.createElement('button');
-        button.textContent = 'View Details';
+        button.textContent = 'Movie Details';
         button.classList.add('product-button');
     
         button.addEventListener('click', () => {
