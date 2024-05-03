@@ -25,6 +25,13 @@ h1 {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 40px;
+    background-color: rgb(3, 0, 35);
+    color: white;
+    margin-left: 50px;
+    margin-right: 50px;
+    height: 60px;
+    padding-top: 10px;
+    border-radius: 5px;
 }
 
 h2 {
@@ -41,7 +48,6 @@ h2,
 p {
     background-color: white;
     width: 400px;
-    text-align: center;
 }
 
 #main-content {
@@ -52,7 +58,8 @@ p {
     row-gap: 30px;
     margin-left: 50px;
     margin-right: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    text-align: center;
 }
 
 .logo {
@@ -100,7 +107,7 @@ p {
   }
 
 
-.product-button {
+.movie-button {
     background-color: rgb(3, 0, 35);
     color: white;
     width: 400px;
@@ -138,4 +145,57 @@ footer {
     height: 180px;
     background-color: rgb(3, 0, 35);
 
+}
+
+.single-movie-container {
+    margin-bottom: 50px;
+}
+
+.movie-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.details-single-movie {
+    height: 590px;
+    width: 460px;
+    background-color: white;
+    text-align: left;
+    line-height: 36px;
+    padding-left: 16px;
+    padding-top: 10px;
+}
+
+#add-to-cart-button {
+    background-color: rgb(3, 0, 35);
+    color: white;
+    width: 200px;
+    height: 40px;
+    border: 2px solid rgb(3, 0, 35);
+    border-radius: 2px;
+    box-shadow: 1px 2px 2px 2px rgba(3, 0, 35, 0.25);
+    margin-top: 20px;
+}
+
+.back-to-all-movies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+
+.back-to-all-movies-button {
+    background-color: white;
+    color: rgb(3, 0, 35);
+    width: 400px;
+    height: 40px;
+    font-size: 1.2rem;
+    padding-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid rgb(3, 0, 35);
+    border-radius: 2px;
+    box-shadow: 1px 2px 2px 2px rgba(3, 0, 35, 0.25);
 }

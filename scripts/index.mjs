@@ -21,66 +21,66 @@ async function getData() {
   } 
 }
 
-async function displayMovies(genre = 'all') {
-  const loader = document.getElementById('loader');
-  const mainContent = document.getElementById('main-content');
+async function displayMovies(genre = "all") {
+  const loader = document.getElementById("loader");
+  const mainContent = document.getElementById("main-content");
   
   try {
-    loader.style.display = 'block';
+    loader.style.display = "block";
     const data = await getData();
 
-    mainContent.innerHTML = '';
+    mainContent.innerHTML = "";
 
-    data.forEach(product => {
-      if (genre === 'all' || product.genre === genre) {
-        const productDiv = document.createElement('div');
-        productDiv.classList.add('product');
+    data.forEach(movie => {
+      if (genre === "all" || movie.genre === genre) {
+        const movieDiv = document.createElement("div");
+        movieDiv.classList.add("movie");
     
-        const img = document.createElement('img');
-        img.src = product.image;
-        img.alt = product.title;
-        productDiv.appendChild(img);
+        const img = document.createElement("img");
+        img.src = movie.image;
+        img.alt = movie.title;
+        movieDiv.appendChild(img);
     
-        const title = document.createElement('h2');
-        title.textContent = product.title;
-        productDiv.appendChild(title);
+        const title = document.createElement("h2");
+        title.textContent = movie.title;
+        movieDiv.appendChild(title);
     
-        const genre = document.createElement('p');
-        genre.textContent = `Genre: ${product.genre}`;
-        productDiv.appendChild(genre);
+        const genre = document.createElement("p");
+        genre.textContent = `Genre: ${movie.genre}`;
+        movieDiv.appendChild(genre);
     
-        const price = document.createElement('p');
-        price.textContent = `Price: ${product.price}`;
-        productDiv.appendChild(price);
+        const price = document.createElement("p");
+        price.textContent = `Price: ${movie.price}`;
+        movieDiv.appendChild(price);
     
-        const button = document.createElement('button');
-        button.textContent = 'Movie Details';
-        button.classList.add('product-button');
+        const button = document.createElement("button");
+        button.textContent = "More Info";
+        button.classList.add("movie-button");
     
-        button.addEventListener('click', () => {
-          window.location.href = `product/index.html?id=${product.id}`;
+        button.addEventListener("click", () => {
+          window.location.href = `product/index.html?id=${movie.id}`;
         });
-        productDiv.appendChild(button);
+        movieDiv.appendChild(button);
         
-        mainContent.appendChild(productDiv); 
+        mainContent.appendChild(movieDiv); 
       }
     });
   } catch (error) {
     console.error(error);
   } finally {
-    loader.style.display = 'none';
+    loader.style.display = "none";
   } 
 }
 
 function addGenreButtonListeners() {
-  const genreButtons = document.querySelectorAll('.genre-button');
+  const genreButtons = document.querySelectorAll(".genre-button");
   genreButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const selectedGenre = button.getAttribute('data-genre');
+    button.addEventListener("click", () => {
+      const selectedGenre = button.getAttribute("data-genre");
       // Remove active class from all buttons
-      genreButtons.forEach(btn => btn.classList.remove('active'));
+      genreButtons.forEach(btn => btn.classList.remove("active"));
       // Add active class to the clicked button
-      button.classList.add('active');
+      button.classList.add("active");
       // Display movies of the selected genre
       displayMovies(selectedGenre);
     });
