@@ -143,10 +143,35 @@ p {
 }
 
 footer {
-    height: 180px;
+    height: 110px;
     background-color: rgb(3, 0, 35);
-
 }
+
+.line1 {
+    padding-top: 20px;
+}
+
+.line2 {
+    margin-top: 20px;
+}
+
+.line1,
+.line2 {
+    border-bottom: 1px solid white;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.link-footer {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 
 .single-movie-container {
     margin-bottom: 50px;

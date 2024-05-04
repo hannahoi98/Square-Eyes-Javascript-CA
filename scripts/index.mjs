@@ -70,7 +70,7 @@ async function displayMovies(genre = "all") {
       }
     });
   } catch (error) {
-    alert("Ops! We have encountered a issue, Please try again later.");
+    alert("Ops! We have encountered a issue. Please try again later.");
     console.error(error);
   } finally {
     loader.style.display = "none";
