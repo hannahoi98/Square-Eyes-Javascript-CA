@@ -257,3 +257,19 @@ footer {
     height: auto;
 }
 
+.confirmation-text {
+    background-color: #f7f7f7;
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.confirmation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+
+}
+
