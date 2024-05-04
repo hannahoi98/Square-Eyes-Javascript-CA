@@ -107,7 +107,8 @@ p {
   }
 
 
-.movie-button {
+.movie-button,
+#checkout-button {
     background-color: rgb(3, 0, 35);
     color: white;
     width: 400px;
@@ -213,7 +214,15 @@ footer {
 #total-price,
 #empty-cart-message {
     margin: 0 auto;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    width: 380px;
     border: 2px solid rgb(3, 0, 35);
     padding: 10px;
+    border-radius: 5px;
 }
+
+#checkout-button {
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+

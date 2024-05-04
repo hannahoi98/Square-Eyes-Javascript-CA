@@ -41,7 +41,7 @@ function displayCartItems() {
 
         // Add delete button
         const deleteBtn = document.createElement("button");
-        deleteBtn.textContent = "Remove";
+        deleteBtn.textContent = "Remove From Cart";
         deleteBtn.addEventListener("click", () => {
             removeFromCart(movie);
             displayCartItems();

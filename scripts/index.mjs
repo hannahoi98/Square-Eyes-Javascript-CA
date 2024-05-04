@@ -1,11 +1,12 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // This code will run when the DOM content is fully loaded
+// Javascript file for index.html page
+// Adding the DOMContent Loaded event listener so the HTML can load first
+document.addEventListener("DOMContentLoaded", () => {
   displayMovies();
   addGenreButtonListeners();
 });
 
 
-// Fetching API
+// Fetching the API
 const API_BASE_URL = "https://api.noroff.dev/api/v1/square-eyes";
 
 async function getData() {
@@ -21,6 +22,9 @@ async function getData() {
   } 
 }
 
+// Function to display and create the movies from the API
+// Default genre button selected on "all" for sorting the movies
+// Added a loader so it will show when fetching and updating the movies/data
 async function displayMovies(genre = "all") {
   const loader = document.getElementById("loader");
   const mainContent = document.getElementById("main-content");
@@ -50,7 +54,7 @@ async function displayMovies(genre = "all") {
         movieDiv.appendChild(genre);
     
         const price = document.createElement("p");
-        price.textContent = `Price: ${movie.price}`;
+        price.textContent = `Price: $${movie.price}`;
         movieDiv.appendChild(price);
     
         const button = document.createElement("button");
@@ -66,22 +70,21 @@ async function displayMovies(genre = "all") {
       }
     });
   } catch (error) {
+    alert("Ops! We have encountered a issue, Please try again later.");
     console.error(error);
   } finally {
     loader.style.display = "none";
   } 
 }
 
+// Function and EventListener for handeling the genre-buttons
 function addGenreButtonListeners() {
   const genreButtons = document.querySelectorAll(".genre-button");
   genreButtons.forEach(button => {
     button.addEventListener("click", () => {
       const selectedGenre = button.getAttribute("data-genre");
-      // Remove active class from all buttons
       genreButtons.forEach(btn => btn.classList.remove("active"));
-      // Add active class to the clicked button
       button.classList.add("active");
-      // Display movies of the selected genre
       displayMovies(selectedGenre);
     });
   });
