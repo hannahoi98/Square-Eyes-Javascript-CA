@@ -1,10 +1,14 @@
-// Fetch API, og vis filmer på forsiden av nettside
-// Legg inn knapper så brukeren kan filtrere produktene på forsiden med kategorier
-// Lag en produktside og link filmene riktig fra API
-// Legg inn knapp så produktet kan bli lagt i handlekurven
-// Kode handlekurv slik at produktene kan fjernes fra handlekurv
-// Knapp på checkoutpage slik at produktene kan kjøpes, så bli sendt til confirmation page. 
+// Legg til error pop-up hvor nødvendig
+// Fikse pathing på hele siden
+// Fikse layout på handlekurv
+// Legge til knapp for å gå til checkout-side
+// Style checkout-side
+// Legge til kommentarer i kode, fikse indentering
 
-// Nødvendige sider: index.html, /product/index.html, checkout/index.html, checkout/confirmation/index.html
+// Poste i Peer Review
+// Gi Peer Review
 
-//Test under for å hente
+// Skrive rapport
+// Fikse footer
+// Fikse aktiv filter-knapp
+// Gå gjennom requirements 

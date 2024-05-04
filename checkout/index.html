@@ -24,16 +24,17 @@
 </header>
 
 <main>
-    <h1>Checkout</h1>
+    <h1>Shopping Cart Summary</h1>
 
-    <div id="cart-container">
-        <!-- Cart items will be displayed here -->
+    <div class="full-cart">
+        <div id="cart-container"></div>
+        <p id="empty-cart-message" style="display: none;">Your cart is empty.</p>
     </div>
-
-    <p id="empty-cart-message" style="display: none;">Your cart is empty.</p>
 
     <p id="total-price">Total: $0.00</p>
 
+    <button id="checkout-button" style="display: none;">Express Checkout</button>
+    
 </main>
 
 <footer>
