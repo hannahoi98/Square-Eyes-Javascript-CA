@@ -80,6 +80,7 @@ p {
     filter: brightness(0) invert(1);
 }
 
+
 .header-top {
     display: flex;
     justify-content: space-between;
@@ -249,5 +250,10 @@ footer {
 #checkout-button {
     margin: 0 auto;
     margin-bottom: 40px;
+}
+
+.icon-confirmation-page {
+    width: 128px;
+    height: auto;
 }
 
