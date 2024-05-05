@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const API_BASE_URL = "https://api.noroff.dev/api/v1/square-eyes";
   
-  // Function to parse URL and extract query parameters to display movie info
+  // Function to parse URL and extract query parameters to display movie info from the API
   function parseUrlParams(url) {
     const params = {};
     const urlParts = url.split("?");
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return params;
   }
   
-  // Function to get movie details by the ID fromt the API
+  // Function to get movie details by the ID from the API
   async function getMovieDetails(movieId) {
     try {
       const response = await fetch(`${API_BASE_URL}/${movieId}`);

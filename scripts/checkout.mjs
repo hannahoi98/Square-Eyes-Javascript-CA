@@ -9,7 +9,7 @@ function displayCartItems() {
     // Clear previous cart items
     cartContainer.innerHTML = "";
 
-    // Display "Your cart is empty" message if cart is empty
+    // Display "Your cart is empty" message if the shopping-cart is empty
     if (cart.length === 0) {
         emptyCartMessage.style.display = "block";
         totalPriceElement.textContent = "Total: $0.00";
@@ -50,16 +50,16 @@ function displayCartItems() {
 
         cartContainer.appendChild(cartItemDiv);
 
-        // Calculate total price
+        // Calculate total price of the movie/movies
         totalPrice += parseFloat(movie.price);
     });
 
 
-    // Display total price
+    // Display the total price of the movies
     totalPriceElement.textContent = `Total: $${totalPrice.toFixed(2)}`;
 }
 
-// Function to remove item from cart
+// Function to remove a item from shopping-cart
 function removeFromCart(movie) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     cart = cart.filter(item => item.id !== movie.id);
@@ -68,7 +68,7 @@ function removeFromCart(movie) {
 
 // Function to handle checkout
 function handleCheckout() {
-    // Clear the cart
+    // Clear the cart after checkout
     localStorage.removeItem("cart");
 }
 
@@ -76,7 +76,7 @@ function handleCheckout() {
 document.addEventListener("DOMContentLoaded", () => {
     displayCartItems();
     
-    // Add event listener to checkout button
+    // Add event listener to the checkout-button
     const checkoutButton = document.getElementById("checkout-button");
     checkoutButton.addEventListener("click", () => {
         handleCheckout();

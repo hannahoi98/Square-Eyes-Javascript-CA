@@ -1,5 +1,7 @@
 // Javascript file for index.html page
+
 // Adding the DOMContent Loaded event listener so the HTML can load first
+// Calling the functions for displaying and filtering the movies
 document.addEventListener("DOMContentLoaded", () => {
   displayMovies();
   addGenreButtonListeners();
@@ -22,7 +24,7 @@ async function getData() {
   } 
 }
 
-// Function to display and create the movies from the API
+// Function to display and dynamically create the movies from the API
 // Default genre button selected on "all" for sorting the movies
 // Added a loader so it will show when fetching and updating the movies/data
 async function displayMovies(genre = "all") {

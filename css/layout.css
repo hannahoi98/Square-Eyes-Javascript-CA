@@ -117,8 +117,13 @@ header {
 }
 
 #checkout-button {
-    margin: 0 auto;
-    margin-bottom: 40px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+#checkout-button,
+#empty-cart-message {
+  display: none;
 }
 
 /* Layout for confirmation.html page */
