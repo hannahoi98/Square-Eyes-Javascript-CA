@@ -146,6 +146,7 @@ header {
 footer {
   height: 110px;
   background-color: rgb(3, 0, 35);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .line1,
