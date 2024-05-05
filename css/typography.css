@@ -1,0 +1,33 @@
+/* Stylesheet for fonts, fontsizing and text-styling */
+
+main {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(3, 0, 35);
+}
+
+h1 {
+  font-size: 2.5rem;
+  background-color: rgb(3, 0, 35);
+  color: white;
+  text-align: center;
+  height: 60px;
+  padding-top: 10px;
+  border-radius: 5px;
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  height: 40px;
+}
+
+p {
+  font-size: 1.2rem;
+  padding-bottom: 3px;
+}
+
+h2,
+p {
+    background-color: white;
+    width: 400px;
+}

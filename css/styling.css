@@ -1,0 +1,74 @@
+/* Stylesheet for shared styling on images, buttons etc */
+/* Image sizing */
+img {
+  width: 400px;
+  height: 600px;
+}
+
+
+/* Styling of loading indicator */
+.loader {
+  border: 8px solid white;
+  border-top: 8px solid rgb(3, 0, 35);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+  display: none; 
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* Styling of buttons */
+.movie-button, 
+.genre-button, 
+#add-to-cart-button,
+#checkout-button {
+  background-color: rgb(3, 0, 35);
+  color: white;
+  border: 2px solid rgb(3, 0, 35);
+  border-radius: 2px;
+  box-shadow: 1px 2px 2px 2px rgba(3, 0, 35, 0.25);
+}
+
+.movie-button,
+#checkout-button {
+    width: 400px;
+    height: 40px;
+    margin-top: 5px;
+}
+
+.genre-button {
+  width: 120px;
+  height: 30px;
+}
+
+.genre-button:hover {
+  background-color: white;
+  color: rgb(3, 0, 35);
+}
+
+#add-to-cart-button {
+  width: 200px;
+  height: 40px;
+  margin-top: 20px;
+}
+
+.back-to-all-movies-button {
+  background-color: white;
+  color: rgb(3, 0, 35);
+  border: 2px solid rgb(3, 0, 35);
+  border-radius: 2px;
+  box-shadow: 1px 2px 2px 2px rgba(3, 0, 35, 0.25);
+  font-size: 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  width: 400px;
+  height: 40px;
+  padding-top: 20px;
+}
