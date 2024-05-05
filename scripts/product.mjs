@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
           detailsDiv.appendChild(description);
   
           const price = document.createElement("p");
-          price.textContent = `Price: ${movie.price}`;
+          price.textContent = `Price: $${movie.price}`;
           detailsDiv.appendChild(price);
                 
           const addToCartBtn = document.createElement("button");
@@ -130,8 +130,4 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Movie ID not provided");
       }
   }
-  
-  // Add event listener to the "add to cart"-button
-  const addToCartBtn = document.getElementById("add-to-cart-button");
-  addToCartBtn.addEventListener("click", handleAddToCartClick);
 });

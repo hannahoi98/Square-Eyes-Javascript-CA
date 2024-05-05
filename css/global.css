@@ -7,14 +7,15 @@ body {
 main {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: rgb(3, 0, 35);
-    margin-top: 710px;
 }
 
 header {
     height: 160px;
     width: 100%;
     background-color: rgb(3, 0, 35);
+    margin-bottom: 710px;
 }
+
 
 img {
     width: 400px;

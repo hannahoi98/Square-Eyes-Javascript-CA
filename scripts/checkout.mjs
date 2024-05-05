@@ -66,6 +66,12 @@ function removeFromCart(movie) {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
+// Function to handle checkout
+function handleCheckout() {
+    // Clear the cart
+    localStorage.removeItem("cart");
+}
+
 // Display cart items when the page loads
 document.addEventListener("DOMContentLoaded", () => {
     displayCartItems();
@@ -73,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Add event listener to checkout button
     const checkoutButton = document.getElementById("checkout-button");
     checkoutButton.addEventListener("click", () => {
+        handleCheckout();
         // Redirect to checkout confirmation page
         window.location.href = "./confirmation/index.html";
     });
