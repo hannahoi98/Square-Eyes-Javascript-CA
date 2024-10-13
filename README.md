@@ -26,4 +26,4 @@ The movie and details were imported by using an API, and the shopping cart was m
 
 # Credits
 - Movie pictures and info are from the Noroff API
-- Header picture are from stockcake.com
+- Header picture are from https://stockcake.com
